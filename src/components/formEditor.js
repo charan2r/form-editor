@@ -56,7 +56,7 @@ const FormEditor = () => {
   };
 
   return (
-    <div className="form-editor-container">
+    <><div className="form-editor-container">
       {/* Welcome Settings Form */}
       <form className="welcome-form">
         <h1>Welcome Screen Settings</h1>
@@ -66,15 +66,13 @@ const FormEditor = () => {
           type="text"
           value={welcomeTitle}
           onChange={(e) => setWelcomeTitle(e.target.value)}
-          placeholder="Welcome Title"
-        />
+          placeholder="Welcome Title" />
 
         <h2>Description</h2>
         <textarea
           value={welcomeDescription}
           onChange={(e) => setWelcomeDescription(e.target.value)}
-          placeholder="Welcome Description"
-        />
+          placeholder="Welcome Description" />
 
         <h2>Upload</h2>
         <input type="file" onChange={handleImageUpload} />
@@ -96,8 +94,7 @@ const FormEditor = () => {
             <img
               src={welcomeImage}
               alt="Welcome"
-              style={{ float: imagePosition }}
-            />
+              style={{ float: imagePosition }} />
           )}
         </div>
 
@@ -106,33 +103,35 @@ const FormEditor = () => {
           <button type="button" onClick={handleRemoveWelcome}>Remove</button>
         </div>
       </form>
-
-      {/* Email Settings Form */}
-      <form className="email-form">
-        <h1>Email Settings</h1>
-
-        <h2>Title</h2>
-        <input
-          type="text"
-          value={email}
-          onChange={handleEmail}
-          placeholder="Enter your email"
-        />
-
-        <h2>Description</h2>
-        <textarea
-          value={emailDescription}
-          onChange={(e) => setEmailDescription(e.target.value)}
-          placeholder="Email Description"
-        />
-        {emailError && <p className="error-message">{emailError}</p>}
-
-        <div className="button-container">
-          <button type="button" onClick={handleSaveEmail}>Save</button>
-          <button type="button" onClick={handleRemoveEmail}>Remove</button>
-        </div>
-      </form>
     </div>
+    
+    <br></br>
+
+    <div className="form-editor-container">
+        {/* Email Settings Form */}
+        <form className="email-form">
+          <h1>Email Settings</h1>
+
+          <h2>Title</h2>
+          <input
+            type="text"
+            value={email}
+            onChange={handleEmail}
+            placeholder="Enter your email" />
+
+          <h2>Description</h2>
+          <textarea
+            value={emailDescription}
+            onChange={(e) => setEmailDescription(e.target.value)}
+            placeholder="Email Description" />
+          {emailError && <p className="error-message">{emailError}</p>}
+
+          <div className="button-container">
+            <button type="button" onClick={handleSaveEmail}>Save</button>
+            <button type="button" onClick={handleRemoveEmail}>Remove</button>
+          </div>
+        </form>
+      </div></>
   );
 };
 
